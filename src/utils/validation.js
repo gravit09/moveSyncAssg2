@@ -20,4 +20,8 @@ export const eventCreateSchema = z.object({
   totalSeats: z.number().int().positive("total seats must be positive"),
 });
 
+export const bookingSchema = z.object({
+  eventId: z.string().min(1, "Event ID is required"),
+});
+
 export const eventUpdateSchema = eventCreateSchema.partial();
